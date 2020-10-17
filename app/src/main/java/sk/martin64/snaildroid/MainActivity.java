@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ import java.util.concurrent.Future;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import sk.martin64.snaildroid.tests.ArrayAllocationTest;
+import sk.martin64.snaildroid.tests.FrameRateTest;
 import sk.martin64.snaildroid.tests.NetworkTest;
 import sk.martin64.snaildroid.tests.StorageReadTest;
 import sk.martin64.snaildroid.tests.TestBase;
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
     TextView status;
     @BindView(R.id.seekBar)
     Slider seekBar;
+    @BindView(R.id.dummyFrame)
+    FrameLayout dummyFrame;
 
     private File dummyFile;
     private TestBase activeTest = null;
@@ -142,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                         "Filled array allocation speed",
                         "Single array fill speed",
                         "Thread spawning speed",
+                        "FPS test",
                 });
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(aa);
@@ -189,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                     .apply();
         });
 
-       setupButton();
+        setupButton();
     }
 
     private void setupButton() {
@@ -214,6 +219,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 5:
                     runTest(new ThreadsSpawningTest(), time);
+                    break;
+                case 6:
+                    runTest(new FrameRateTest(dummyFrame), time);
                     break;
             }
         });

@@ -1,4 +1,4 @@
-package sk.martin64.snaildroid.tests;
+package sk.martin64.snaildroid.tests.adapters;
 
 import java.util.ArrayList;
 import java.util.List;

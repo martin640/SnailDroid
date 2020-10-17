@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
+import sk.martin64.snaildroid.tests.adapters.DefaultLongGraphAdapterImpl;
 import sk.martin64.snaildroid.view.MeasureGraphView;
 import sk.martin64.snaildroid.view.Utils;
 

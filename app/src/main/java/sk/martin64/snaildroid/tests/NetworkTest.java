@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.InterruptedIOException;
 import java.net.URL;
 
+import sk.martin64.snaildroid.tests.adapters.DefaultLongGraphAdapterImpl;
 import sk.martin64.snaildroid.view.MeasureGraphView;
 import sk.martin64.snaildroid.view.Utils;
 
